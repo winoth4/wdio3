@@ -3,6 +3,9 @@ import {join} from 'path';
 
 const apkPath=join(process.cwd(),"./app/android/Notepad.apk")
 export const config: Options.Testrunner = {
+    user:"vinothcts_BDWU69",
+    key:"5pEKiQ5ezEAzhyyVz9nU",
+    
     //
     // ====================
     // Runner Configuration
@@ -15,8 +18,6 @@ export const config: Options.Testrunner = {
         }
     },
     
-    
-    port: 4723,
     //
     // ==================
     // Specify Test Files
@@ -34,7 +35,7 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        './test/specs/*.ts'
+        './test/specs/ApiDemoTest.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -64,9 +65,8 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
         "platformName": "Android",
-        "appium:platformVersion": "11",
-        "appium:deviceName": "Nexus S API 30",
-        "appium:app": apkPath,
+        "appium:deviceName": "Google Pixel 5",
+        "appium:app": "bs://a3eb0fc508c5872a58a3b13f28dcbfa69fd8a8c8",
         "appium:automationName": "uiautomator2"
 
     }],
@@ -117,7 +117,7 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+    services: ['browserstack'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
