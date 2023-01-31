@@ -1,21 +1,19 @@
 import type { Options } from '@wdio/types'
 import { config } from './wdio.conf';
-import {join} from 'path';
 
-const apkPath=join(process.cwd(),"./app/android/Notepad.apk")
 config.user="vinothcts_BDWU69",
 config.key="5pEKiQ5ezEAzhyyVz9nU",
 // ============
 // Specs
 // ============
 config.specs = [
-    './test/specs/ApiDemoTest.ts'
+    './e2e/src/integration/sauce_login/sauce.login.smoke.spec.ts'
 ];
 config.services= ['browserstack'],
 config.capabilities= [{
     "platformName": "Android",
     "appium:deviceName": "Google Pixel 5",
-    "appium:app": "bs://a3eb0fc508c5872a58a3b13f28dcbfa69fd8a8c8",
+    "appium:app": "bs://471c8108c037234009c47ef79b7f8d915439f368",
     "appium:automationName": "uiautomator2"
 
 }]
