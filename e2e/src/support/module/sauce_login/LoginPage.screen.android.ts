@@ -1,7 +1,9 @@
+import { injectable } from "inversify";
+import 'reflect-metadata';
 import { ChainablePromiseElement } from "webdriverio";
-import  LocatorHelper  from "../../shared/locatorHelper";
 import { LoginPage } from "./LoginPage.screen";
-const locHelper=new LocatorHelper()
+
+@injectable()
 export class LoginPageAndroid extends LoginPage{
     getHomePageHeader(): ChainablePromiseElement<WebdriverIO.Element> {
         return super.getLabelFieldAndroid({text:'PRODUCTS'})

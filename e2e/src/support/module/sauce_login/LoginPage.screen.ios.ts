@@ -1,26 +1,21 @@
+import { injectable } from "inversify";
+import 'reflect-metadata';
+import { ChainablePromiseElement } from "webdriverio";
 import  LocatorHelper  from "../../shared/locatorHelper";
-const locHelper=new LocatorHelper()
-export class LoginPageIos{
-    get loginPageHeader(){
-        return locHelper.generateIOSClassChai('**/XCUIElementTypeStaticText[`label == "Login"`]')
-    }
-    get userName(){
-        return $('~Username input field')
-    }
+import { LoginPage } from "./LoginPage.screen";
 
-    get password(){
-        return $('~Password input field')
-    }
-
-    
-    get loginButton(){
-        return $('~Login button')
-    }
-
-    async login(username:string,password:string){
-       await this.userName.setValue(username)
-        await this.password.setValue(password)
-        await this.loginButton.click()
-    }
-
+@injectable()
+export class LoginPageIos extends LoginPage{
+     getUserName():ChainablePromiseElement<WebdriverIO.Element>{
+        return this.findElementByText("test-Username");
+     }
+     getPassword():ChainablePromiseElement<WebdriverIO.Element>{
+        return this.findElementByText("test-Password");
+     }
+     getLoginBtn():ChainablePromiseElement<WebdriverIO.Element>{
+        return this.findElementByText("test-LOGIN");
+     }
+     getHomePageHeader():ChainablePromiseElement<WebdriverIO.Element>{
+        return $('')
+     }
 }

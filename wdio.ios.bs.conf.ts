@@ -9,13 +9,13 @@ config.key="5pEKiQ5ezEAzhyyVz9nU",
 // Specs
 // ============
 config.specs = [
-    './test/specs/ios/*.ts'
+    './e2e/src/integration/sauce_login/sauce.login.smoke.spec.ts'
 ];
 config.services= ['browserstack'],
 config.capabilities= [{
     "platformName": "ios",
     "appium:deviceName": "iPhone 11",
-    "appium:app": "bs://9da6378068e681535d106d591763a62a5029fd14",
+    "appium:app": "bs://f5eedb5a855870ca02bfa47dd89da9644d7f25e8",
     "appium:automationName": "xcuitest"
 
 }]

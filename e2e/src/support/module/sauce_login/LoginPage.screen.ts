@@ -1,6 +1,9 @@
 import { ChainablePromiseElement } from "webdriverio";
 import BaseScreen from "../../shared/base.screen";
+import { injectable } from "inversify";
+import 'reflect-metadata';
 
+@injectable()
 export abstract class LoginPage extends BaseScreen{
     abstract getUserName():ChainablePromiseElement<WebdriverIO.Element>;
     abstract getPassword():ChainablePromiseElement<WebdriverIO.Element>;

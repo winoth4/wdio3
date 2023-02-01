@@ -1,8 +1,18 @@
+import { injectable } from "inversify"
 import { ChainablePromiseElement } from "webdriverio"
 
+@injectable()
  export default class BaseScreen{
       public generateIOSClassChai(selector:string){
         return $(`-ios class chain:${selector}`)
+    }
+
+    public getIosElement(elementype:WebdriverIO.ElementType):string{
+        return `-ios predicate string:${this.predicateStringBuilder(elementype)}`
+    }
+
+    predicateStringBuilder(elementType:WebdriverIO.ElementType):string{
+        return `name=="${elementType.text}"`
     }
 
     public getAndroidElement(elementType:WebdriverIO.ElementType):string{
@@ -19,7 +29,7 @@ import { ChainablePromiseElement } from "webdriverio"
     }
 
     findElementByText(text:string):ChainablePromiseElement<WebdriverIO.Element>{
-        return $(`${this.getAndroidElement({text:text})}`);
+        return driver.isIOS?$(`${this.getIosElement({text:text})}`):$(`${this.getAndroidElement({text:text})}`);
 
     }
 
