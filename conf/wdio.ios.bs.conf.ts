@@ -9,7 +9,7 @@ config.key="5pEKiQ5ezEAzhyyVz9nU",
 // Specs
 // ============
 config.specs = [
-    './e2e/src/integration/sauce_login/sauce.login.smoke.spec.ts'
+    '../e2e/src/integration/sauce_login/sauce.login.smoke.spec.ts'
 ];
 config.services= ['browserstack'],
 config.capabilities= [{

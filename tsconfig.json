@@ -4,6 +4,7 @@
         "emitDecoratorMetadata": true,
         "moduleResolution": "node",
         "module": "commonjs",
+        "resolveJsonModule": true,
         "lib": ["es6"],
         // "baseUrl": "./",
         "types": [

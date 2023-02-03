@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run wdio.conf.ts",
-    "wdio.bs.android": "wdio run wdio.android.bs.conf.ts",
-    "wdio.bs.ios": "wdio run wdio.ios.bs.conf.ts"
+    "wdio.bs.android": "wdio run conf/wdio.android.bs.conf.ts",
+    "wdio.bs.ios": "wdio run conf/wdio.ios.bs.conf.ts"
   },
   "author": "",
   "license": "ISC",
